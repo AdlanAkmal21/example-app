@@ -4,3 +4,7 @@
 <br>
 <p>Email: admin@mail.com</p>
 <p>Password: 12345678</p>
+<p>Database Name: exampleapp</p>
+
+<h4>To get started:</h4>
+<p>Rename '- Copy.env' into '.env' & migrate</p>
