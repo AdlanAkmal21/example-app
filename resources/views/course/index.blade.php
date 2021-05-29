@@ -6,11 +6,11 @@
 
     <a href="{{ route('courses.create') }}" class="btn btn-primary my-3">Add Course</a>
 
-    <table class="table table-striped">
+    <table class="table table-bordered table-striped text-center">
         <thead>
           <tr>
-            <th>Course Code<th>
-            <th>Course Name<th>
+            <th>Course Code</th>
+            <th>Course Name</th>
             <th colspan="3">Action</th>
           </tr>
         </thead>
@@ -22,17 +22,16 @@
                 <td>{{ $course->course_name }}</td>
 
                 <td>
-                    <a href="{{route('courses.show', $course)}}" class="btn btn-info">Show</a>
+                    <a href="{{route('courses.show', $course)}}" class="btn btn-info btn-block">Show</a>
                 </td>
                 <td>
-                    <a href="{{route('courses.edit', $course)}}" class="btn btn-success">Edit</a>
+                    <a href="{{route('courses.edit', $course)}}" class="btn btn-success btn-block">Edit</a>
                 </td>
-
                 <td>
                     <form method="post" action="{{ route('courses.destroy', $course) }}" >
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger btn-block">Delete</button>
                     </form>
                 </td>
             </tr>

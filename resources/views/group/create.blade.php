@@ -9,8 +9,8 @@
         @csrf
 
         <div class="form-group">
-            <label for="group_name">Group Name:</label>
-            <input type="text" class="form-control" name="group_name" id="group_name">
+            <label for="group_code">Group Code:</label>
+            <input type="text" class="form-control" name="group_code" id="group_code">
         </div>
 
         <div class="form-group">

@@ -41,8 +41,12 @@ class GroupController extends Controller
     public function store(Request $request)
     {
         $group = new Group();
-        $group->group_name = $request->get('group_name');
-        $group->programme_id = $request->get('programme_id');
+        $group->group_code = $group_code = $request->get('group_code');
+        $group->programme_id = $programme_id = $request->get('programme_id');
+
+        $programme = Programme::where('id', $programme_id)->first();
+
+        $group->group_name = "$programme->programme_code $group_code";
         $group->save();
 
         return redirect()->route('groups.index')->with('success', 'Group added.');
@@ -67,7 +71,9 @@ class GroupController extends Controller
      */
     public function edit(Group $group)
     {
-        return view('group.edit', compact('group'));
+        $programmes = Programme::all();
+
+        return view('group.edit', compact('programmes'));
     }
 
     /**
@@ -79,11 +85,15 @@ class GroupController extends Controller
      */
     public function update(Request $request, Group $group)
     {
-        $group->group_name = $request->get('group_name');
-        $group->programme_id = $request->get('programme_id');
+        $group->group_code = $group_code = $request->get('group_code');
+        $group->programme_id = $programme_id = $request->get('programme_id');
+
+        $programme_name = Programme::where('id', $programme_id)->pluck('programme_name');
+
+        $group->group_name = "$group_code $programme_name";
         $group->save();
 
-        return redirect()->route('groups.index')->with('success', 'Group added.');
+        return redirect()->route('groups.index')->with('success', 'Group updated.');
     }
 
     /**

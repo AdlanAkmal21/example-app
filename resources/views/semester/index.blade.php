@@ -6,11 +6,11 @@
 
     <a href="{{ route('semesters.create') }}" class="btn btn-primary my-3">Add Semester</a>
 
-    <table class="table table-striped">
+    <table class="table table-bordered table-striped text-center">
         <thead>
           <tr>
-            <th>Semester<th>
-            <th>Year<th>
+            <th>Semester</th>
+            <th>Year</th>
             <th colspan="3">Action</th>
           </tr>
         </thead>
@@ -22,17 +22,17 @@
                 <td>{{ $semester->year }}</td>
 
                 <td>
-                    <a href="{{route('semesters.show', $semester)}}" class="btn btn-info">Show</a>
+                    <a href="{{route('semesters.show', $semester)}}" class="btn btn-info btn-block">Show</a>
                 </td>
                 <td>
-                    <a href="{{route('semesters.edit', $semester)}}" class="btn btn-success">Edit</a>
+                    <a href="{{route('semesters.edit', $semester)}}" class="btn btn-success btn-block">Edit</a>
                 </td>
 
                 <td>
                     <form method="post" action="{{ route('semesters.destroy', $semester) }}" >
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger btn-block">Delete</button>
                     </form>
                 </td>
             </tr>

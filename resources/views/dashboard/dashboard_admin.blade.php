@@ -9,6 +9,11 @@
 
                 <div class="card-body">
 
+                    <div class="form-group text-center">
+                        <h2>Welcome {{ Auth::user()->name }}! </h2>
+                        <h5>Below are some of the functions/features to get started.</h5>
+                    </div>
+
                     <div class="form-row form-group">
                         <div class="col">
                             <a href="{{ route('courses.index') }}" type="button" class="btn btn-warning btn-block">Course</a>

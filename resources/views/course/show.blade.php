@@ -7,12 +7,12 @@
 
     <div class="form-group">
         <label for="course_code">Course Code:</label>
-        <input type="text" class="form-control" name="course_code" id="course_code" value="{{ $course->course_code }}">
+        <input disabled type="text" class="form-control" name="course_code" id="course_code" value="{{ $course->course_code }}">
     </div>
 
     <div class="form-group">
         <label for="course_name">Course Name:</label>
-        <input type="text" class="form-control" name="course_name" id="course_name" value="{{ $course->course_name }}">
+        <input disabled type="text" class="form-control" name="course_name" id="course_name" value="{{ $course->course_name }}">
     </div>
 
 </div>

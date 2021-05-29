@@ -12,10 +12,11 @@
     <a href="{{ route('products.create') }}" class="btn btn-primary my-3">Add Product</a>
 
     <!-- Table untuk display listings of resources (in this case, products). Boleh guna any way untuk display listings, not limited kepada table. -->
-    <table class="table table-striped">
+    <table class="table table-bordered table-striped text-center">
         <thead>
           <tr>
-            <th>Product<th>
+            <th>Product Name</th>
+            <th>Product Price</th>
             <th colspan="3">Action</th>
           </tr>
         </thead>
@@ -31,10 +32,10 @@
 
                 <!-- For button show & edit boleh direct guna tag <a href=""> & route() -->
                 <td>
-                    <a href="{{route('products.show', $product)}}" class="btn btn-info">Show</a>
+                    <a href="{{route('products.show', $product)}}" class="btn btn-info btn-block">Show</a>
                 </td>
                 <td>
-                    <a href="{{route('products.edit', $product)}}" class="btn btn-success">Edit</a>
+                    <a href="{{route('products.edit', $product)}}" class="btn btn-success btn-block">Edit</a>
                 </td>
 
                 <!-- For button delete ni special skit, sebab destroy() method dia is POST. Takleh guna href biasa sebab GET -->
@@ -43,7 +44,7 @@
                     <form method="post" action="{{ route('products.destroy', $product) }}" >
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger">Delete</button>
+                        <button type="submit" class="btn btn-danger btn-block">Delete</button>
                     </form>
                 </td>
             </tr>
