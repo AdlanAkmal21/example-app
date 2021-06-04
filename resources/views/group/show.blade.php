@@ -2,8 +2,7 @@
 @section('content')
 
 <div class="container mt-4">
-    <h1>Show Group</h1>
-    <a href="{{ route('groups.index') }}" class="btn btn-secondary my-3">Group List</a>
+    <h1>Show Group <a href="{{ route('groups.index') }}" class="btn btn-secondary btn-fill float-right">Group List</a></h1>
 
     <div class="form-group">
         <label for="group_code">Group Code:</label>

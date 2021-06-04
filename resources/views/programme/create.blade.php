@@ -2,8 +2,8 @@
 @section('content')
 
 <div class="container mt-4">
-    <h1>Create Programme</h1>
-    <a href="{{ route('programmes.index') }}" class="btn btn-secondary my-3">Programme List</a>
+    <h1>Create Programme <a href="{{ route('programmes.index') }}" class="btn btn-secondary btn-fill float-right">Programme List</a></h1>
+
 
     <form method="POST" action="{{ route('programmes.store') }}">
         @csrf
@@ -18,7 +18,7 @@
             <input type="text" class="form-control" name="programme_name" id="programme_name">
         </div>
 
-        <button type="submit" class="btn btn-primary my-3">Add Programme</button>
+        <button type="submit" class="btn btn-primary btn-fill my-3">Add Programme</button>
     </form>
 </div>
 

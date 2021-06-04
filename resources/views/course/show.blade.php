@@ -3,7 +3,7 @@
 
 <div class="container mt-4">
     <h1>Show Course</h1>
-    <a href="{{ route('courses.index') }}" class="btn btn-secondary my-3">Course List</a>
+    <a href="{{ route('courses.index') }}" class="btn btn-secondary btn-fill my-3">Course List</a>
 
     <div class="form-group">
         <label for="course_code">Course Code:</label>

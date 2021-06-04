@@ -2,8 +2,8 @@
 @section('content')
 
 <div class="container mt-4">
-    <h1>Show Programme</h1>
-    <a href="{{ route('programmes.index') }}" class="btn btn-secondary my-3">Programme List</a>
+    <h1>Show Programme <a href="{{ route('programmes.index') }}" class="btn btn-secondary btn-fill float-right">Programme List</a></h1>
+
 
     <div class="form-group">
         <label for="programme_code">Programme Code:</label>

@@ -2,8 +2,7 @@
 @section('content')
 
 <div class="container mt-4">
-    <h1>Edit User</h1>
-    <a href="{{ route('users.index') }}" class="btn btn-secondary my-3">User List</a>
+    <h1>Edit User <a href="{{ route('users.index') }}" class="btn btn-secondary btn-fill float-right">User List</a></h1>
 
     <form method="POST" action="{{ route('users.update', $user) }}">
         @csrf
@@ -35,7 +34,7 @@
         </div>
 
 
-        <button type="submit" class="btn btn-success my-3">Update User</button>
+        <button type="submit" class="btn btn-success btn-fill my-3">Update User</button>
     </form>
 </div>
 

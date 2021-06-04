@@ -2,9 +2,9 @@
 @section('content')
 
 <div class="container mt-4">
-    <h1>Programme List</h1>
+    <h1>Programme List <a href="{{ route('programmes.create') }}" class="btn btn-primary btn-fill float-right">Add Programme</a></h1>
 
-    <a href="{{ route('programmes.create') }}" class="btn btn-primary my-3">Add Programme</a>
+
 
     <table class="table table-bordered table-striped text-center">
         <thead>
@@ -22,17 +22,17 @@
                 <td>{{ $programme->programme_name }}</td>
 
                 <td>
-                    <a href="{{route('programmes.show', $programme)}}" class="btn btn-info btn-block">Show</a>
+                    <a href="{{route('programmes.show', $programme)}}" class="btn btn-info btn-fill btn-block">Show</a>
                 </td>
                 <td>
-                    <a href="{{route('programmes.edit', $programme)}}" class="btn btn-success btn-block">Edit</a>
+                    <a href="{{route('programmes.edit', $programme)}}" class="btn btn-success btn-fill btn-block">Edit</a>
                 </td>
 
                 <td>
                     <form method="post" action="{{ route('programmes.destroy', $programme) }}" >
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-block">Delete</button>
+                        <button type="submit" class="btn btn-danger btn-fill btn-block">Delete</button>
                     </form>
                 </td>
             </tr>

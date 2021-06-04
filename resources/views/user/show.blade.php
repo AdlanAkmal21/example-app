@@ -2,8 +2,7 @@
 @section('content')
 
 <div class="container mt-4">
-    <h1>Show User</h1>
-    <a href="{{ route('users.index') }}" class="btn btn-secondary my-3">User List</a>
+    <h1>Show User <a href="{{ route('users.index') }}" class="btn btn-secondary btn-fill float-right">User List</a></h1>
 
     <div class="form-group">
         <label for="name">User Name:</label>

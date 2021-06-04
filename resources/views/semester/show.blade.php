@@ -2,8 +2,8 @@
 @section('content')
 
 <div class="container mt-4">
-    <h1>Show Semester</h1>
-    <a href="{{ route('semesters.index') }}" class="btn btn-secondary my-3">Semester List</a>
+    <h1>Show Semester <a href="{{ route('semesters.index') }}" class="btn btn-secondary btn-fill float-right">Semester List</a></h1>
+
 
     <div class="form-group">
         <label for="semester_name">Semester Name:</label>

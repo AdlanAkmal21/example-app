@@ -2,8 +2,8 @@
 @section('content')
 
 <div class="container mt-4">
-    <h1>Edit Group</h1>
-    <a href="{{ route('groups.index') }}" class="btn btn-secondary my-3">Group List</a>
+    <h1>Edit Group <a href="{{ route('groups.index') }}" class="btn btn-secondary btn-fill float-right">Group List</a></h1>
+
 
     <form method="POST" action="{{ route('groups.update', $group) }}">
         @csrf
@@ -24,7 +24,7 @@
             </select>
         </div>
 
-        <button type="submit" class="btn btn-success my-3">Update Group</button>
+        <button type="submit" class="btn btn-success btn-fill my-3">Update Group</button>
     </form>
 </div>
 

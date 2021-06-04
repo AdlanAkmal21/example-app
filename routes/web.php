@@ -9,10 +9,13 @@ use App\Http\Controllers\CoordinatorController;
 use App\Http\Controllers\TCController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CourseController;
+use App\Http\Controllers\FormController;
 use App\Http\Controllers\GroupController;
 use App\Http\Controllers\ProgrammeController;
 use App\Http\Controllers\SemesterController;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Session;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,18 +55,35 @@ Auth::routes(['register' => false]);
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/dashboard/admin', [AdminController::class, 'dashboard_admin'])->name('admin');
-    Route::get('/dashboard/tc', [TCController::class, 'dashboard_tc'])->name('tc');
-    Route::get('/dashboard/coordinator', [CoordinatorController::class, 'dashboard_coordinator'])->name('coordinator');
+    Route::middleware('role:1')->group(function () {
+        Route::get('/dashboard/admin', [AdminController::class, 'dashboard_admin'])->name('admin');
+        Route::resource('courses', CourseController::class);
+        Route::resource('programmes', ProgrammeController::class);
+        Route::resource('groups', GroupController::class);
+        Route::resource('semesters', SemesterController::class);
+        Route::resource('users', UserController::class);
+    });
 
-    Route::resource('courses', CourseController::class);
-    Route::resource('programmes', ProgrammeController::class);
-    Route::resource('groups', GroupController::class);
-    Route::resource('semesters', SemesterController::class);
-    Route::resource('users', UserController::class);
+    Route::middleware('role:2')->group(function () {
+        Route::get('/dashboard/coordinator', [CoordinatorController::class, 'dashboard_coordinator'])->name('coordinator');
+        Route::resource('forms', FormController::class);
+    });
+
+    Route::middleware('role:3')->group(function () {
+        Route::get('/dashboard/tc', [TCController::class, 'dashboard_tc'])->name('tc');
+    });
+
 
 });
 
 Route::resource('products', ProductController::class);
 
 Route::get('/error/no_permission', function(){ return view('error.no_permission'); })->name('error.no_permission');
+
+
+// Route::get('/flush', function(){
+//     Session::flush();
+//     Auth::logout();
+//     return Redirect::to("/login")
+//       ->with('message', array('type' => 'success', 'text' => 'You have successfully logged out'));
+// });

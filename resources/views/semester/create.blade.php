@@ -2,8 +2,8 @@
 @section('content')
 
 <div class="container mt-4">
-    <h1>Create Semester</h1>
-    <a href="{{ route('semesters.index') }}" class="btn btn-secondary my-3">Semester List</a>
+    <h1>Create Semester <a href="{{ route('semesters.index') }}" class="btn btn-secondary btn-fill float-right">Semester List</a></h1>
+
 
     <form method="POST" action="{{ route('semesters.store') }}">
         @csrf
@@ -18,7 +18,7 @@
             <input type="text" class="form-control" name="year" id="year">
         </div>
 
-        <button type="submit" class="btn btn-primary my-3">Add Semester</button>
+        <button type="submit" class="btn btn-primary btn-fill my-3">Add Semester</button>
     </form>
 </div>
 

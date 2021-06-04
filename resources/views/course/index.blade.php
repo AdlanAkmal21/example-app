@@ -2,9 +2,7 @@
 @section('content')
 
 <div class="container mt-4">
-    <h1>Course List</h1>
-
-    <a href="{{ route('courses.create') }}" class="btn btn-primary my-3">Add Course</a>
+    <h1>Course List <a href="{{ route('courses.create') }}" class="btn btn-primary btn-fill float-right">Add Course</a></h1>
 
     <table class="table table-bordered table-striped text-center">
         <thead>
@@ -15,29 +13,26 @@
           </tr>
         </thead>
         <tbody>
-
             @foreach ($courses as $course)
             <tr>
                 <td>{{ $course->course_code }}</td>
                 <td>{{ $course->course_name }}</td>
 
                 <td>
-                    <a href="{{route('courses.show', $course)}}" class="btn btn-info btn-block">Show</a>
+                    <a href="{{route('courses.show', $course)}}" class="btn btn-info btn-fill btn-block">Show</a>
                 </td>
                 <td>
-                    <a href="{{route('courses.edit', $course)}}" class="btn btn-success btn-block">Edit</a>
+                    <a href="{{route('courses.edit', $course)}}" class="btn btn-success btn-fill btn-block">Edit</a>
                 </td>
                 <td>
                     <form method="post" action="{{ route('courses.destroy', $course) }}" >
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-block">Delete</button>
+                        <button type="submit" class="btn btn-danger btn-fill btn-block">Delete</button>
                     </form>
                 </td>
             </tr>
             @endforeach
-
-
         </tbody>
     </table>
 </div>

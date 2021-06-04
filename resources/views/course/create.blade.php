@@ -3,7 +3,7 @@
 
 <div class="container mt-4">
     <h1>Create Course</h1>
-    <a href="{{ route('courses.index') }}" class="btn btn-secondary my-3">Course List</a>
+    <a href="{{ route('courses.index') }}" class="btn btn-secondary btn-fill my-3">Course List</a>
 
     <form method="POST" action="{{ route('courses.store') }}">
         @csrf
@@ -18,7 +18,7 @@
             <input type="text" class="form-control" name="course_name" id="course_name">
         </div>
 
-        <button type="submit" class="btn btn-primary my-3">Add Course</button>
+        <button type="submit" class="btn btn-primary btn-fill my-3">Add Course</button>
     </form>
 </div>
 

@@ -2,9 +2,7 @@
 @section('content')
 
 <div class="container mt-4">
-    <h1>User List</h1>
-
-    <a href="{{ route('users.create') }}" class="btn btn-primary my-3">Add User</a>
+    <h1>User List <a href="{{ route('users.create') }}" class="btn btn-primary btn-fill float-right">Add User</a></h1>
 
     <table class="table table-bordered table-striped text-center">
         <thead>
@@ -26,17 +24,17 @@
                 <td>{{ $user->roles->role_name }}</td>
 
                 <td>
-                    <a href="{{route('users.show', $user)}}" class="btn btn-info btn-block">Show</a>
+                    <a href="{{route('users.show', $user)}}" class="btn btn-info btn-fill btn-block">Show</a>
                 </td>
                 <td>
-                    <a href="{{route('users.edit', $user)}}" class="btn btn-success btn-block">Edit</a>
+                    <a href="{{route('users.edit', $user)}}" class="btn btn-success btn-fill btn-block">Edit</a>
                 </td>
 
                 <td>
                     <form method="post" action="{{ route('users.destroy', $user) }}" >
                         @csrf
                         @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-block">Delete</button>
+                        <button type="submit" class="btn btn-danger btn-fill btn-block">Delete</button>
                     </form>
                 </td>
             </tr>

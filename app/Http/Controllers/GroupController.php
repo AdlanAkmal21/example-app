@@ -73,7 +73,7 @@ class GroupController extends Controller
     {
         $programmes = Programme::all();
 
-        return view('group.edit', compact('programmes'));
+        return view('group.edit', compact('programmes', 'group'));
     }
 
     /**
